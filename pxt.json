@@ -1,0 +1,17 @@
+{
+    "name": "Robotech Ecosystem",
+    "version": "1.0.0",
+    "description": "Official extension for Robotech:REX board and Robotech:AI trainable Vision AI (TinyML) camera. Train custom KNN models at robotech.edu.pl.",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "test.ts",
+        "icon.png"
+    ],
+    "targetVersions": {
+        "target": "6.0.0"
+    }
+}

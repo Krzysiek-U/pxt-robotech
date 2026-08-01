@@ -6,6 +6,30 @@ This extension provides a hardware-abstracted block interface for the
 **Robotech REX Expansion Board** paired with any **Universal Vision AI
 Camera Module** running custom TinyML models.
 
+---
+
+### 1. Robotech REX Expansion Board
+The micro:bit plugs directly into the **Robotech REX Expansion Board**, which acts as the main hardware interface and a smart bridge. The REX board features its own onboard microcontroller that handles all low-level, high-frequency, and timing-sensitive hardware operations autonomously:
+* Driving high-torque DC motors.
+* Coordinating multi-servo synchronized group movements (`S0-S3`).
+* Managing timing-critical protocols like addressable RGB LEDs (WS2812B) and 1-Wire thermal sensors.
+* Reading continuous multi-channel Analog-to-Digital Converter (ADC) values.
+
+Any requested sensor readings or operational telemetry are packaged by the REX board and sent back asynchronously to the micro:bit via serial frames.
+
+### 2. Autonomous Robotech AI Camera Module
+For advanced computer vision tasks, the **Robotech AI Camera Module** is integrated into the system. Instead of consuming micro:bit's processing power, all image processing runs natively on the camera's dedicated AI hardware. 
+* **Routing & Passthrough:** The micro:bit sends vision-related commands using the `to:ai;` prefix. The REX expansion board acts as a data pipeline, routing these frames directly to the AI camera.
+* **Autonomous Processing:** The camera operates independently, managing its own Wi-Fi Access Point (AP), capturing image frames, and executing edge-computing algorithms natively.
+
+### 3. TinyML Model Training & Workflow
+The AI module supports a custom machine learning workflow tailored for educational AI learning:
+1. **Image Collection:** The camera's built-in software allows students to snap images of various objects or environments.
+2. **Data Export:** Collected images are transferred via the onboard Wi-Fi AP to a computer.
+3. **Model Training:** Users import these images into the **robotech.edu.pl** specialized web platform for visual image recognition training. The model is trained entirely in the browser using interactive machine learning tools.
+4. **Edge Deployment:** Once trained, the compiled TinyML model file is compiled and uploaded back onto the Robotech AI Camera Module.
+5. **Real-Time Inference:** When running, the camera recognizes learned objects natively on-device and streams the real-time inference results (such as face detection flags and bounding box coordinates) back through the REX board to the micro:bit for block-level execution.
+
 ## UART Communication Protocol
 
 The micro:bit communicates with the Robotech REX mainboard and the AI camera module using a lightweight, text-based serial protocol via UART (9600 baud, 8N1). 

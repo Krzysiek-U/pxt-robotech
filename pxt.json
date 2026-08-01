@@ -8,6 +8,8 @@
     "files": [
         "README.md",
         "main.ts",
+        "_locales/pl/main-jsdoc-strings.json",
+        "_locales/pl/pxt-robotech-strings.json",
         "test.ts",
         "icon.png"
     ],

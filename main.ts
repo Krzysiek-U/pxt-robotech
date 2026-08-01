@@ -72,7 +72,7 @@ namespace robotechREX_Internal {
     // SINGLE, SHARED UART BACKGROUND LOOP
     control.inBackground(function () {
         serial.redirect(SerialPin.P1, SerialPin.P0, BaudRate.BaudRate9600)
-
+        
         while (true) {
             let frame = serial.readLine().trim()
             if (frame.length == 0) {
@@ -129,7 +129,7 @@ namespace robotechREX {
     //% s0.defl=90 s1.defl=90 s2.defl=90 s3.defl=90 duration.defl=500
     //% weight=100
     export function setGroupStep(s0: number, s1: number, s2: number, s3: number, duration: number): void {
-        serial.writeLine("to:board;cmd:move;s0:" + s0 + ";s1:" + s1 + ";s2:" + s2 + ";s3:" + s3 + ";time:" + duration + ";")
+        serial.writeLine("to:rex;cmd:move;s0:" + s0 + ";s1:" + s1 + ";s2:" + s2 + ";s3:" + s3 + ";time:" + duration + ";")
     }
 
     //% block="REX: configure pin %pin as %mode"
@@ -139,20 +139,20 @@ namespace robotechREX {
         if (mode == RexPinMode.DigitalIn) m = "in";
         if (mode == RexPinMode.Pwm) m = "pwm";
         if (mode == RexPinMode.AnalogIn) m = "adc";
-        serial.writeLine("to:board;cmd:pin-mode;pin:" + pin + ";mode:" + m + ";")
+        serial.writeLine("to:rex;cmd:pin-mode;pin:" + pin + ";mode:" + m + ";")
     }
 
     //% block="REX: write on pin %pin value %value"
     //% value.min=0 value.max=1023 value.defl=512
     //% weight=90
     export function writePinValue(pin: RexPin, value: number): void {
-        serial.writeLine("to:board;cmd:pin-write;pin:" + pin + ";val:" + value + ";")
+        serial.writeLine("to:rex;cmd:pin-write;pin:" + pin + ";val:" + value + ";")
     }
 
     //% block="REX: measure analog pin %pin"
     //% weight=85
     export function measureADC(pin: RexPin): void {
-        serial.writeLine("to:board;cmd:adc-read;pin:" + pin + ";")
+        serial.writeLine("to:rex;cmd:adc-read;pin:" + pin + ";")
     }
 
     //% block="REX: read analog value from pin %pin"
@@ -165,7 +165,7 @@ namespace robotechREX {
     //% speed.min=-100 speed.max=100 speed.defl=0
     //% weight=75
     export function controlMotor(motor: MotorNumber, speed: number): void {
-        serial.writeLine("to:board;cmd:motor;num:" + motor + ";speed:" + speed + ";")
+        serial.writeLine("to:rex;cmd:motor;num:" + motor + ";speed:" + speed + ";")
     }
 
     //% block="REX: set WS LED %index color R:%r G:%g B:%b"
@@ -175,13 +175,13 @@ namespace robotechREX {
     //% b.min=0 b.max=255 b.defl=0
     //% weight=70
     export function setWsLed(index: number, r: number, g: number, b: number): void {
-        serial.writeLine("to:board;cmd:rgb;index:" + index + ";r:" + r + ";g:" + g + ";b:" + b + ";")
+        serial.writeLine("to:rex;cmd:rgb;index:" + index + ";r:" + r + ";g:" + g + ";b:" + b + ";")
     }
 
     //% block="REX: request 1-Wire read"
     //% weight=65
     export function request1Wire(): void {
-        serial.writeLine("to:board;cmd:1w-read;")
+        serial.writeLine("to:rex;cmd:1w-read;")
     }
 
     //% block="REX: 1-Wire temperature (°C)"

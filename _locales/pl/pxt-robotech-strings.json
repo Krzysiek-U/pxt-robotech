@@ -1,0 +1,8 @@
+{
+  "RexPinMode.DigitalOut|block": "wyjście cyfrowe",
+  "RexPinMode.DigitalIn|block": "wejście cyfrowe",
+  "RexPinMode.Pwm|block": "PWM",
+  "RexPinMode.AnalogIn|block": "analogowe (ADC)",
+  "LedState.On|block": "włącz",
+  "LedState.Off|block": "wyłącz"
+}

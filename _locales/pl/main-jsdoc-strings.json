@@ -1,0 +1,22 @@
+{
+  "robotechREX": "Robotech REX",
+  "robotechAI": "Robotech AI",
+  "robotechREX.setGroupStep": "REX: ustaw krok S0:%s0 stopni S1:%s1 stopni S2:%s2 stopni S3:%s3 stopni w czasie %duration ms",
+  "robotechREX.configureUniversalPin": "REX: konfiguruj pin %pin jako %mode",
+  "robotechREX.writePinValue": "REX: zapisz na pinie %pin wartość %value",
+  "robotechREX.measureADC": "REX: zmierz pin analogowy %pin",
+  "robotechREX.getAdcValue": "REX: odczyt analogowy z pinu %pin",
+  "robotechREX.controlMotor": "REX: ustaw silnik %motor prędkość %speed",
+  "robotechREX.setWsLed": "REX: ustaw diodę WS %index kolor R:%r G:%g B:%b",
+  "robotechREX.request1Wire": "REX: zażądaj odczytu 1-Wire",
+  "robotechREX.get1WireTemp": "REX: temperatura 1-Wire (°C)",
+  "robotechAI.isFaceDetected": "AI: czy wykryto twarz?",
+  "robotechAI.getFaceX": "AI: pozycja X twarzy",
+  "robotechAI.getFaceY": "AI: pozycja Y twarzy",
+  "robotechAI.saveBackground": "AI: zapamiętaj aktualny obraz jako TŁO",
+  "robotechAI.saveObject": "AI: zapamiętaj aktualny obraz jako OBIEKT",
+  "robotechAI.turnOnAP": "AI: włącz punkt dostępowy AP sieć %ssid hasło %password",
+  "robotechAI.turnOffAP": "AI: wyłącz punkt dostępowy AP",
+  "robotechAI.setFaceDetection": "AI: detekcja twarzy %state",
+  "robotechAI.setCameraPower": "AI: zasilanie kamery %state"
+}

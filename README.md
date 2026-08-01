@@ -2,6 +2,11 @@
 Custom blocks for the advanced educational robotics ecosystem from **[
 robotech.edu.pl](https://robotech.edu.pl)**.
 
+## Hardware Overview & Architecture
+
+The Robotech ecosystem utilizes a multi-processor, hardware-abstracted architecture designed to offload time-critical tasks from the micro:bit, ensuring smooth and robust robot operation.
+
+
 This extension provides a hardware-abstracted block interface for the
 **Robotech REX Expansion Board** paired with any **Universal Vision AI
 Camera Module** running custom TinyML models.

@@ -8,8 +8,6 @@ The Robotech ecosystem utilizes a multi-processor, hardware-abstracted architect
 
 ![Robotech REX & AI Hardware Architecture](docs/hardware-architecture.png)
 
-<details>
-<summary><b>Show text-based architecture diagram (ASCII)</b></summary>
 
 
 This extension provides a hardware-abstracted block interface for the

@@ -6,6 +6,11 @@ robotech.edu.pl](https://robotech.edu.pl)**.
 
 The Robotech ecosystem utilizes a multi-processor, hardware-abstracted architecture designed to offload time-critical tasks from the micro:bit, ensuring smooth and robust robot operation.
 
+![Robotech REX & AI Hardware Architecture](docs/hardware-architecture.png)
+
+<details>
+<summary><b>Show text-based architecture diagram (ASCII)</b></summary>
+
 
 This extension provides a hardware-abstracted block interface for the
 **Robotech REX Expansion Board** paired with any **Universal Vision AI

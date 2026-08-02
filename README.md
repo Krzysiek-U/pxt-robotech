@@ -8,6 +8,35 @@ The Robotech ecosystem utilizes a multi-processor, hardware-abstracted architect
 
 ![Robotech REX & AI Hardware Architecture](docs/hardware-architecture.png)
 
+<details>
+<summary><b>Show text-based architecture diagram (ASCII)</b></summary>
+
+```text
+                      +-------------------+
+
+                      |     micro:bit     |
+                      | (Master Controller|
+                      +---------+---------+
+                                |
+                                | UART (to:rex; / to:mb;)
+                                v
+                      +-------------------+
+
+                      |   Robotech REX    |
+                      |  Expansion Board  |
+                      +---------+---------+
+                                |
+                                | UART Passthrough (to:ai;)
+                                v
+                      +-------------------+       +-------------------+
+
+                      |    Robotech AI    |       |   External Web    |
+                      |   Camera Module   | <.... |   Training Platform|
+                      | (Autonomous Vision|       |  (TinyML Model)   |
+                      +-------------------+       +-------------------+
+```
+
+</details>
 
 
 This extension provides a hardware-abstracted block interface for the
